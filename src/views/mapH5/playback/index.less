@@ -1,0 +1,81 @@
+#dispatchBackplayMap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .search-bar {
+    width: 180px;
+    height: 50px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -90px; 
+    z-index: 5;
+    height: 36px;
+  }
+  .content-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 360px;
+    box-shadow: 1px 0px 3px #ccc;
+    background: #fff;
+    z-index: 10;
+    transition: left 0.3s ease;
+    &-toogle {
+      display: inline-block;
+      width: 20px;
+      height: 60px;
+      position: absolute;
+      top: 50%;
+      left: 360px;
+      margin-top: -25px;
+      text-align: center;
+      line-height: 60px;
+      background: #fff;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      box-shadow: 1px 1px 2px #ccc;
+      cursor: pointer;
+    }
+  }
+  .content-right {
+    position: absolute;
+    top: 0;
+    left: 380px;
+    bottom: 0;
+    right: 0;
+    transition: left 0.3s ease;
+    &-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 85px;
+    }
+    &-bottom {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #fff;
+      user-select: none;
+    }
+  }
+  .bm-view {
+    width: 100%;
+    height: 100%;
+    &-window {
+      div {
+        padding: 3px;
+        span {
+          font-weight: bolder;
+          display: inline-block;
+          width: 60px;
+          text-align: right;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

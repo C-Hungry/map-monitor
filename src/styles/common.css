@@ -1,0 +1,54 @@
+body{
+  overflow: hidden;
+}
+
+.business-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+}
+
+.zk-search-bar {
+  text-align: center;
+}
+
+.zk-search-bar .zk-search-bar-container {
+  display: inline-block;
+}
+
+.zk-search-bar .zk-search-bar-container .zk-search-bar-row {
+  user-select: none;
+  height: 32px;
+  line-height: 32px;
+  margin-top: 12px;
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.zk-success {
+  color: #83DA44;
+  background-color: #DBF4DC;
+}
+.zk-warning {
+  color: #F6B54D;
+  background-color: #FEEED3;
+}
+.zk-default {
+  color: #666;
+  background-color: #D9D9D9;
+}
+.zk-error {
+  color: #FC6565;
+  background-color: #FEE8E8;
+}
+
+.ivu-table td, .ivu-table th {
+  height: 36px!important;
+}
+
+.ivu-table .ivu-table-cell {
+  padding: 0 8px;
+}

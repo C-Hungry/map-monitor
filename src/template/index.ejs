@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <title>TMS运输监控平台</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache"> 
+    <meta HTTP-EQUIV="Cache-Control" CONTENT= "no-cache, must-revalidate">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[0] %>">
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+    <script type="text/javascript" src="./config.js"></script>
+    <script>
+        //判断是否是IE浏览器，包括Edge浏览器  
+        function IEVersion()  
+        {  
+            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串  
+            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1; //判断是否IE浏览器  
+            var isEdge = userAgent.indexOf("Windows NT 6.1; Trident/7.0;") > -1 && !isIE; //判断是否IE的Edge浏览器  
+            if(isIE)  
+            {  
+                var reIE = new RegExp("MSIE (\\d+\\.\\d+);");  
+                reIE.test(userAgent);  
+                var fIEVersion = parseFloat(RegExp["$1"]);  
+                if(fIEVersion == 7)  
+                { return "IE7";}  
+                else if(fIEVersion == 8)  
+                { return "IE8";}  
+                else if(fIEVersion == 9)  
+                { return "IE9";}  
+                else if(fIEVersion == 10)  
+                { return "IE10";}  
+                else if(fIEVersion == 11)  
+                { return "IE11";}  
+                else  
+                { return "0"}//IE版本过低  
+            }  
+            else if(isEdge)  
+            {  
+                return "Edge";  
+            }  
+            else  
+            {  
+                return "-1";//非IE  
+            }  
+        }  
+        if (IEVersion() == "IE7" || IEVersion() == "IE8" || IEVersion() == "IE9" || IEVersion() == "0") {
+            setTimeout(function () {
+                location.href = "http://60.205.164.169/TMS-WEB/NotSupport";
+            });
+        }
+    </script>
+    <script type="text/javascript" src="http://ditu.google.cn/maps/api/js?sensor=false&libraries=drawing&key=AIzaSyDFcIvhG_iAw7mu_wvlr52VnIre2kM4LYs"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=75f36adfac8dda024924a39b1d4da855"></script>
+    <!--加载鼠标绘制工具-->
+    <script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[0] %>"></script>
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[1] %>"></script>
+</body>
+</html>
